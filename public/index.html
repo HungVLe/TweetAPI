@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twitter Service</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+</head>
+
+<body>
+    <div class="container" id="tweet">
+
+        <div class="post-tweet">
+            <form id="tweetMessage">
+                <textarea id="newTweet" rows="3" cols="50"></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Post to Twitter</button>
+            </form>
+        </div>
+        &nbsp;
+        <div class="search-tweet">
+            <input type="text" class="form-control" id="search" placeholder="Start typing here..." />
+            <button type="button" class="btn btn-primary" id="getTweets">Search Tweet</button>
+            <ul id="outputTweets"></ul>
+        </div>
+        &nbsp;
+        <div class="delete-tweet">
+            <form id="deleteTweetID">
+                <textarea id="tweetIdToDelete" rows="3" cols="50"></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Delete Tweet</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/site.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#getTweets').on('click', window.TwitApp.getTweets);
+            $('#tweetMessage').on('submit', window.TwitApp.postTweet)
+            $('#deleteTweetID').on('submit', window.TwitApp.deleteTweet)
+        });
+    </script>
+</body>
+
+</html>
