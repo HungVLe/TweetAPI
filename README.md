@@ -1,7 +1,7 @@
 # TweetAPI
 
 In the index.js file, replace below *** with your Twitter application keys
-
+```
 const T = new twit({
     consumer_key: '***'
     , consumer_secret: '***'
@@ -9,3 +9,4 @@ const T = new twit({
     , access_token_secret: '***'
     , timeout_ms: 60 * 1000, // optional HTTP request timeout to apply to all requests. 
 })
+```
